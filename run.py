@@ -1,5 +1,6 @@
 from xyz import build
 
+_A = build()
+
 if __name__ == '__main__':
-    print('Rock and Roll')
-    build()
+    _A.run(debug=True)

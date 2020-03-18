@@ -20,4 +20,7 @@ def build(config_class=Config):
     _L.init_app(_A)
     _M.init_app(_A)
 
+    from xyz.main.routes import main
+    _A.register_blueprint(main)
+
     return _A
