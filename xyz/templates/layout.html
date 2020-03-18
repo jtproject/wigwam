@@ -6,6 +6,8 @@
     <title>Document - {{title}}</title>
 </head>
 <body>
+    <a href="{{ url_for('main.home') }}">Home</a>
+    <a href="{{ url_for('main.info') }}">Info</a>
     {% block content %}{% endblock %}
 </body>
 </html>
