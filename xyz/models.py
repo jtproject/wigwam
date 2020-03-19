@@ -74,7 +74,7 @@ class Calendar(_D.Model):
         primary_key=True
     )
     weekday = _D.Column(
-        _D.String(9),
+        _D.String(5),
         nullable=False
     )
     day = _D.Column(

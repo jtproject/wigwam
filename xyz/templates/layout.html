@@ -15,7 +15,9 @@
     s
     </header>
     <a class="m5" href="{{ url_for('main.home') }}">Home</a>
-    <a class="m5" href="{{ url_for('main.info') }}">Info</a>
+    <a class="m5" href="{{ url_for('main.info') }}">Info</a><br>
+    <a class="m5" href="{{ url_for('cal.calendar') }}">View Calendar</a>
+    <a class="m5" href="{{ url_for('cal.add_data') }}">Add Calendar</a>
     {% block content %}{% endblock %}
 </body>
 </html>

@@ -22,5 +22,7 @@ def build(config_class=Config):
 
     from xyz.main.routes import main
     _A.register_blueprint(main)
+    from xyz.cal.routes import cal
+    _A.register_blueprint(cal)
 
     return _A
