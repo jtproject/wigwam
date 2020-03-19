@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document - {{title}}</title>
+    {% if title %}
+        <title>Project Wigwam - {{title}}</title>
+    {% else %}
+        <title>Project Wigwam</title>
+    {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='view.css') }}">
 </head>
 <body>
-    <a href="{{ url_for('main.home') }}">Home</a>
-    <a href="{{ url_for('main.info') }}">Info</a>
+    <header class="site-nav">
+    s
+    </header>
+    <a class="m5" href="{{ url_for('main.home') }}">Home</a>
+    <a class="m5" href="{{ url_for('main.info') }}">Info</a>
     {% block content %}{% endblock %}
 </body>
 </html>

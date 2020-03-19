@@ -1,0 +1,27 @@
+@import 'margins.css';
+@import 'nav-bar.css';
+
+:root {
+    --blue:#0077cc;
+    --green: #61d161;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {  
+    background: #373737;
+    color: var(--green);
+    margin-top: 3rem;
+}
+
+a {
+    color: var(--blue);
+}
+
+a:hover {
+    color: #ccc;
+}

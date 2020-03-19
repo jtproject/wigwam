@@ -1,0 +1,5 @@
+.site-nav {
+    background: var(--green);
+    width: 100%;
+    position: fixed; top: 0;
+}

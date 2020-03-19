@@ -16,12 +16,15 @@ class Guy(_D.Model, UserMixin):
         _D.Integer,
         primary_key=True
     )
-    usr = _D.Column(
+    fname = _D.Column(
         _D.String(20),
-        unique=True,
         nullable=False
     )
-    eml = _D.Column(
+    lname = _D.Column(
+        _D.String(20),
+        nullable=False
+    )
+    email = _D.Column(
         _D.String(120),
         unique=True,
         nullable=False
@@ -60,7 +63,7 @@ class Guy(_D.Model, UserMixin):
         return Guy.query.get(u_id)
 
     def __repr__(self):
-        return f"Guy('{self.usr}', '{self.eml}', '{self.num}', '{self.img}')"
+        return f"Guy('{self.fname}', '{self.fname}', '{self.email}', '{self.num}', '{self.img}')"
 #
 #
 #
