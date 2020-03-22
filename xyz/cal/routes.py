@@ -8,16 +8,17 @@ cal = Blueprint('cal', __name__)
 
 @cal.route('/calendar')
 def calendar():
-    return render_template('calendar.html', title='View Calendar')
+    xx = Calendar.query.filter_by(month='Apr').order_by(Calendar.day)
+    return render_template('calendar.html', title='View Calendar', dates=xx)
 
 @cal.route('/data/calendar', methods=['GET', 'POST'])
 def add_data():
     form = BuildCalendarForm()
     if form.validate_on_submit():
         date = Calendar(weekday=form.weekday.data, day=form.day.data, month=form.month.data, year=form.year.data)
-        _D.session.add(date)
+        #_D.session.add(date)
         print(date)
-        _D.session.commit()
+        #_D.session.commit()
         #flash(f'')
         return redirect(url_for('cal.add_data'))
     return render_template('data/create_calendar.html', title='Add Calendar Data', form=form)

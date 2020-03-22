@@ -1,0 +1,8 @@
+.cal-wrap {
+    display: grid;
+    width: 40rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: .5fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 5px;
+    background: var(--blue);
+}

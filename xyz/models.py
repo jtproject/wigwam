@@ -6,7 +6,6 @@ from xyz import _D, _L
 
 @_L.user_loader
 def uLoad(u_id):
-    print('this?')
     return Guy.query.get(int(u_id))
 #
 #

@@ -2,6 +2,10 @@
 
 {% block content %}
 
-<h1>Oops, you won!</h1>
+    <div class="cal-wrap">
+        {% for x in dates %}
+            {{ x.day }}
+        {% endfor %}
+    </div>
 
 {% endblock content %}
