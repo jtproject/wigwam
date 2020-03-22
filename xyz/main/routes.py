@@ -6,8 +6,8 @@ main = Blueprint('main', __name__)
 @main.route('/')
 @main.route('/home')
 def home():
-    print('home page')
-    return render_template('home.html')
+    days = Calendar.query.all()
+    return render_template('home.html', days=days)
 
 @main.route('/info')
 def info():

@@ -6,6 +6,7 @@ from xyz import _D, _L
 
 @_L.user_loader
 def uLoad(u_id):
+    print('this?')
     return Guy.query.get(int(u_id))
 #
 #
@@ -43,11 +44,7 @@ class Guy(_D.Model, UserMixin):
         _D.String(60),
         nullable=False
     )
-    schedule = _D.relationship(
-        'Work',
-        backref='employee',
-        lazy=True
-    )
+    #schedule = _D.relationship('Work',backref='employee', lazy=True)
 
     def resetToken(self, expires_sec=1800):
         s = Ser(current_app.config['SECRET_KEY'], expires_sec)
@@ -69,26 +66,11 @@ class Guy(_D.Model, UserMixin):
 #
 # Calendar Class
 class Calendar(_D.Model):
-    id = _D.Column(
-        _D.Integer,
-        primary_key=True
-    )
-    weekday = _D.Column(
-        _D.String(5),
-        nullable=False
-    )
-    day = _D.Column(
-        _D.Integer,
-        nullable=False
-    )
-    month = _D.Column(
-        _D.String(3),
-        nullable=False
-    )
-    year = _D.Column(
-        _D.Integer,
-        nullable=False
-    )
+    id = _D.Column(_D.Integer, primary_key=True)
+    weekday = _D.Column(_D.String(5), nullable=False)
+    day = _D.Column(_D.String(5), nullable=False)
+    month = _D.Column(_D.String(3), nullable=False)
+    year = _D.Column(_D.String(4), nullable=False)
 
     def __repr__(self):
         return f"Calendar('{self.weekday}', '{self.day}', '{self.month}', '{self.year}')"

@@ -2,21 +2,31 @@
 
 {% block content %}
 
-<div class="wrap">
-    <div class="app-bar">
-        <div class="app-title">
-            <p>{{ title }}</p>
+<div class="form-contents">
+    <form method="POST" action="">
+        {% if form != 'Nope': %}
+            {{ form.hidden_tag() }}
+        {% endif %}
+        <fieldset class="form-group">
+        <div class="form-group">
+            {{ form.weekday.label }}
+            {{ form.weekday }}
         </div>
-        <div class="app-funx">
-            <button class="data-funx">Submit</button>
-            <button class="data-funx">Cancel</button>
+        <div class="form-group">
+            {{ form.month.label }}
+            {{ form.month }}
         </div>
-    </div>
-    <div class="app-form">
-        Form Data
-    </div>
+        <div class="form-group">
+            {{ form.day.label }}
+            {{ form.day }}
+        </div>
+        <div class="form-group">
+            {{ form.year.label }}
+            {{ form.year }}
+        </div>
+        <span class="data-funx" id="submit-button">{{ form.submit(class="btm btn-outline-info") }}</span>
+        </fieldset>
+    </form>
 </div>
-
-<h1>God Bless Jay Thompson</h1>
 
 {% endblock content %}
