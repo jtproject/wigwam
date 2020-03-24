@@ -1,5 +1,5 @@
-from flask import render_template, request, Blueprint
-from xyz.models import Calendar
+from flask import render_template, url_for, request, Blueprint, redirect
+from xyz.models import Calendar, Guy
 from xyz import _D
 
 main = Blueprint('main', __name__)
@@ -10,6 +10,15 @@ def home():
     days = Calendar.query.all()
 
     return render_template('home.html', days=days)
+
+@main.route('/del')
+def delete():
+    g = Guy.query.filter_by(pw='password')
+    for x in g:
+        print(x)
+        #_D.session.delete(x)
+    #_D.session.commit()
+    return redirect(url_for('cal.add_data'))
 
 @main.route('/info')
 def info():

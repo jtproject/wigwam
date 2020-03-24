@@ -1,8 +1,21 @@
+
+
 .cal-wrap {
     display: grid;
     width: 40rem;
+    margin: auto;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: .5fr 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 5px;
     background: var(--blue);
+}
+
+.cal-day {
+    background: var(--green);
+    color: white;
+    grid-auto-flow: column;
+}
+
+.cal-label {
+    grid-auto-flow: column;
 }

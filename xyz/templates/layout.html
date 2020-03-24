@@ -15,9 +15,17 @@
     s
     </header>
     <a class="m5" href="{{ url_for('main.home') }}">Home</a>
+    {% if current_user.is_authenticated %}
+    <a class="m5" href="{{ url_for('guy.logout') }}">Log Out</a>
+    {% else %}
+    <a class="m5" href="{{ url_for('guy.login') }}">Login</a>
+    <a class="m5" href="{{ url_for('guy.register') }}">Register</a>
+    {% endif %}
     <a class="m5" href="{{ url_for('main.info') }}">Info</a><br>
     <a class="m5" href="{{ url_for('cal.calendar') }}">View Calendar</a>
+    <a class="m5" href="{{ url_for('guy.guys') }}">View Guys</a><br>
     <a class="m5" href="{{ url_for('cal.add_data') }}">Add Calendar</a>
+    <a class="m5" href="{{ url_for('guy.add_data') }}">Add Guy</a>
     {% block content %}{% endblock %}
 </body>
 </html>

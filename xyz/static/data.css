@@ -22,6 +22,11 @@ p {
     font-size: .8rem;
 }
 
+button {
+    border: none;
+    background: transparent;
+}
+
 .wrap {
     display: grid;
     grid-template-columns: 1fr;
@@ -76,6 +81,7 @@ p {
 }
 
 .data-funx {
+    width: 4rem;
     margin-left: .5rem;
     background: var(--light);
     color: var(--black);

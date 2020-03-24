@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="form-contents">
-    <form method="POST" action="">
+    <form method="POST" action="" id="theForm">
         {% if form != 'Nope': %}
             {{ form.hidden_tag() }}
         {% endif %}
@@ -24,7 +24,6 @@
             {{ form.year.label }}
             {{ form.year }}
         </div>
-        <span class="data-funx" id="submit-button">{{ form.submit(class="btm btn-outline-info") }}</span>
         </fieldset>
     </form>
 </div>

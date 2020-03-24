@@ -1,0 +1,40 @@
+{% extends 'data/layout.html' %}
+
+{% block content %}
+
+<div class="form-contents">
+    <form method="POST" action="" id="theForm">
+        {% if form != 'Nope': %}
+            {{ form.hidden_tag() }}
+        {% endif %}
+        <fieldset class="form-group">
+        <div class="form-group">
+            {{ form.fname.label }}
+            {{ form.fname }}
+        </div>
+        <div class="form-group">
+            {{ form.lname.label }}
+            {{ form.lname }}
+        </div>
+        <div class="form-group">
+            {{ form.email.label }}
+            {% if form.email.errors %}
+				{{ form.email(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.email.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+			{% else %}
+						{{ form.email(class="form-control form-control-lg") }}
+			{% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.num.label }}
+            {{ form.num }}
+        </div>
+        </fieldset>
+    </form>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    {% for x in guy %}
+    <p>
+        {{x.fname}} {{x.lname}}<br>
+        Email: {{x.email}}<br>
+        Cell: {{x.num}}
+    </p>
+    {% endfor %}
+{% endblock content %}

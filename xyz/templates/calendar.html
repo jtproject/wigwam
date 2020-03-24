@@ -1,11 +1,16 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-
     <div class="cal-wrap">
+        {% for y in wd %}
+        <div class="cal-label">
+            {{ y }}
+        </div>
+        {% endfor %}
         {% for x in dates %}
+        <div class="cal-day">
             {{ x.day }}
+        </div>
         {% endfor %}
     </div>
-
 {% endblock content %}

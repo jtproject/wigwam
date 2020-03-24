@@ -12,37 +12,13 @@ def uLoad(u_id):
 #
 # Guy class
 class Guy(_D.Model, UserMixin):
-    id = _D.Column(
-        _D.Integer,
-        primary_key=True
-    )
-    fname = _D.Column(
-        _D.String(20),
-        nullable=False
-    )
-    lname = _D.Column(
-        _D.String(20),
-        nullable=False
-    )
-    email = _D.Column(
-        _D.String(120),
-        unique=True,
-        nullable=False
-    )
-    num = _D.Column(
-        _D.Integer,
-        unique=True,
-        default=7322958200
-    )
-    img = _D.Column(
-        _D.String(20),
-        nullable=False,
-        default='pic.jpg'
-    )
-    pw = _D.Column(
-        _D.String(60),
-        nullable=False
-    )
+    id = _D.Column(_D.Integer, primary_key=True)
+    fname = _D.Column(_D.String(20), nullable=False)
+    lname = _D.Column(_D.String(20), nullable=False)
+    email = _D.Column(_D.String(120), unique=True, nullable=False)
+    num = _D.Column(_D.String(10), nullable=False, default='7322958200')
+    img = _D.Column(_D.String(20), nullable=False, default='pic.jpg')
+    pw = _D.Column(_D.String(60), nullable=False, default='password')
     #schedule = _D.relationship('Work',backref='employee', lazy=True)
 
     def resetToken(self, expires_sec=1800):
@@ -59,7 +35,7 @@ class Guy(_D.Model, UserMixin):
         return Guy.query.get(u_id)
 
     def __repr__(self):
-        return f"Guy('{self.fname}', '{self.fname}', '{self.email}', '{self.num}', '{self.img}')"
+        return f"Guy('{self.fname}', '{self.lname}', '{self.email}', '{self.num}', '{self.img}')"
 #
 #
 #
